@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>池田耳鼻咽喉科｜愛知県東海市の耳鼻いんこう科</title>
+<meta name="description" content="愛知県東海市大田町の池田耳鼻咽喉科。名鉄太田川駅北口より徒歩2分。みみ・はな・のどの診療、花粉症、舌下免疫療法、いびき検査、オンライン診療に対応しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   池田耳鼻咽喉科 リニューアル案（デザイン見本）
+   余白ルール
+     縦方向 … 11px の倍数（--v-*）のみを使う
+     横方向 … 7px の倍数（--h-*）のみを使う
+   ============================================================ */
+
+:root{
+  /* 縦の余白：11の倍数 */
+  --v-1: 11px;   --v-2: 22px;   --v-3: 33px;   --v-4: 44px;
+  --v-5: 55px;   --v-6: 66px;   --v-7: 77px;   --v-8: 88px;
+  --v-10: 110px; --v-12: 132px;
+
+  /* 横の余白：7の倍数 */
+  --h-1: 7px;    --h-2: 14px;   --h-3: 21px;   --h-4: 28px;
+  --h-5: 35px;   --h-6: 42px;   --h-7: 49px;   --h-8: 56px;
+  --h-10: 70px;  --h-14: 98px;
+
+  /* 幅（横方向なので 7 の倍数） */
+  --container: 1022px;   /*  7 × 146 */
+  --hero-max:  1099px;   /*  7 × 157 */
+  --label-col:  140px;   /*  7 × 20  */
+  --doctor-col: 224px;   /*  7 × 32  */
+
+  /* 色 */
+  --blue:        #1583CF;
+  --blue-dark:   #0F5E97;
+  --blue-deep:   #124A78;
+  --blue-pale:   #EEF6FC;
+  --orange:      #EB6F17;
+  --ink:         #3C4248;
+  --ink-soft:    #5A6168;
+  --line:        #A09C9C;   /* 区切り線 */
+  --line-soft:   #A09C9C;   /* 区切り線（リストの行） */
+  --placeholder: #D9DCDE;
+  --red:         #E2553B;
+
+  --accent-turquoise:#4FBFC2;
+  --accent-green:    #9FCF45;
+  --accent-yellow:   #E3BE34;
+  --accent-orange:   #F2AE52;
+  --accent-purple:   #B09FDF;
+  --accent-pink:     #EF93B1;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; scroll-padding-top: var(--v-2); }
+
+body{
+  margin:0;
+  font-family:"Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.9;
+  font-size:15px;
+  font-weight:500;            /* 本文を少しだけ太く（400 → 500） */
+  -webkit-font-smoothing:antialiased;
+  padding-bottom: var(--v-6);  /* 右下の追従ボタンの逃げ */
+}
+
+img{ max-width:100%; display:block; }
+a{ color:var(--blue); text-decoration:none; }
+a:hover{ opacity:.7; }
+
+.container{
+  width:min(100% - var(--h-8), var(--container));
+  margin-inline:auto;
+}
+
+/* ---- 共通セクション -------------------------------------- */
+.sec{ padding-block: var(--v-6); }          /* セクション間 = 66 + 66 = 132px */
+.sec-head{
+  margin:0 0 var(--v-4);                    /* 見出し → 本文 = 44px */
+  font-size:19px;
+  font-weight:700;
+  color:var(--blue);
+  letter-spacing:.08em;
+}
+.sec-head--inline{ margin:0; }
+
+/* 左ラベル＋本文の2カラム */
+.labelled{
+  display:grid;
+  grid-template-columns: var(--label-col) 1fr;
+  column-gap: var(--h-8);
+  row-gap: var(--v-3);
+  align-items:start;
+}
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+.header{
+  background:#fff;
+  padding-block: var(--v-2) var(--v-2);
+}
+.header-inner{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  column-gap: var(--h-6);
+}
+.brand{
+  grid-column:2;
+  justify-self:center;
+  display:block;
+}
+.brand img{ width:378px; max-width:100%; height:auto; }   /* 378 = 7 × 54 */
+.header-tel{
+  grid-column:3; justify-self:end; text-align:right;
+}
+.header-tel .ruby{
+  display:block;
+  font-size:11px; letter-spacing:.3em; color:var(--blue-dark);
+  margin-bottom: var(--v-1);
+}
+.header-tel .num{
+  font-family:"Quicksand",sans-serif;
+  font-size:25px; font-weight:700; letter-spacing:.1em;
+  color:var(--blue-dark); line-height:1;
+}
+
+.nav{
+  margin-top: var(--v-2);
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  column-gap: var(--h-5);
+  row-gap: var(--v-1);
+}
+.nav a{
+  font-size:14px; font-weight:500; color:var(--blue-dark); letter-spacing:.06em;
+}
+
+/* ---- ハンバーガーボタン（スマホのみ） ---- */
+.nav-toggle{
+  display:none;
+  width:42px; height:42px;              /* 42 = 7 × 6 */
+  padding:0;
+  border:0;
+  background:none;
+  cursor:pointer;
+  position:relative;
+}
+.nav-toggle span{
+  position:absolute;
+  left:9px; right:9px;
+  height:2px;
+  background:var(--blue-dark);
+  border-radius:2px;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.nav-toggle span:nth-child(1){ top:13px; }
+.nav-toggle span:nth-child(2){ top:20px; }
+.nav-toggle span:nth-child(3){ top:27px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+.btn-web{
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-size:14px; font-weight:700; letter-spacing:.06em;
+  padding: var(--v-1) var(--h-4);
+  border-radius:999px;
+  line-height:1.5;
+}
+.btn-web:hover{ opacity:.85; }
+
+/* ---- 右下の追従ボタン（常に表示） ---- */
+.float-cta{
+  position:fixed;
+  right: var(--h-4);
+  bottom: var(--v-2);
+  z-index:40;
+  display:grid;
+  grid-auto-flow:column;          /* 横並び */
+  column-gap: var(--h-2);
+}
+.float-cta a{
+  display:grid; place-items:center;
+  min-width:154px;                       /* 154 = 7 × 22 */
+  padding: var(--v-1) var(--h-4);
+  border-radius:999px;
+  font-size:14px; font-weight:700; letter-spacing:.06em;
+  color:#fff;
+  box-shadow:0 2px 12px rgba(18,74,120,.22);
+}
+.float-cta a:hover{ opacity:.85; }
+.float-cta .is-monshin{ background:var(--blue); }
+.float-cta .is-web{ background:var(--orange); }
+
+/* ============================================================
+   ヒーロー
+   ============================================================ */
+.hero{ padding-block: 0 var(--v-6); }
+.hero-img{
+  width:min(100% - var(--h-8), var(--hero-max));
+  margin-inline:auto;
+  aspect-ratio: 2.93 / 1;
+  overflow:hidden;
+  border-radius: var(--h-8);
+  background:var(--blue-pale);
+}
+.hero-img img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center 42%;
+  transform:scale(1.03);
+}
+
+/* ============================================================
+   お知らせ
+   ============================================================ */
+.news-list{ margin:0; padding:0; list-style:none; }
+.news-list li{
+  display:flex; align-items:baseline; justify-content:space-between;
+  column-gap: var(--h-6);
+  padding-block: var(--v-2);
+  border-bottom:1px solid var(--line-soft);
+}
+.news-list li p{ margin:0; }
+.news-list a{
+  flex:0 0 auto;
+  font-size:14px;
+  text-decoration:underline;
+  text-underline-offset:.3em;
+}
+
+/* ============================================================
+   診療時間 ／ アクセス
+   ============================================================ */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap: var(--h-8);
+  row-gap: var(--v-6);
+  align-items:start;
+}
+
+.hours-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top: var(--v-4);
+  font-size:14px;
+}
+.hours-table th,
+.hours-table td{
+  padding-block: var(--v-2);
+  text-align:center;
+  font-weight:500;
+  border-bottom:1px solid var(--line-soft);
+}
+.hours-table thead th{
+  border-bottom:1px solid var(--line);
+  color:var(--ink-soft);
+  font-size:13px;
+  padding-bottom: var(--v-1);
+}
+.hours-table .th-time{
+  text-align:left;
+  width:35%;
+  padding-right: var(--h-3);
+}
+.hours-table .th-time span{
+  display:block;
+  font-size:12px; color:var(--ink-soft); font-weight:500;
+  margin-top: var(--v-1);
+}
+.mk{ font-size:16px; line-height:1; }
+.mk-circle{ color:var(--blue); }
+.mk-tri{ color:var(--accent-yellow); }
+.mk-star{ color:var(--accent-purple); }
+.mk-none{ color:#A9B0B6; }
+
+.hours-legend{
+  display:flex; flex-wrap:wrap;
+  column-gap: var(--h-8); row-gap: var(--v-1);
+  margin-top: var(--v-3);
+  font-size:13px; color:var(--ink-soft);
+}
+.hours-legend span .mk{ margin-right: var(--h-1); }
+.hours-closed{
+  margin: var(--v-2) 0 0;
+  font-size:13px;
+  color:var(--red);
+}
+.hours-contact{ margin-top: var(--v-4); }
+.hours-contact .lbl{
+  margin:0;
+  font-size:15px; font-weight:700; color:var(--blue); letter-spacing:.08em;
+}
+.hours-contact .num{
+  margin: var(--v-1) 0 0;
+  font-family:"Quicksand",sans-serif;
+  font-size:28px; font-weight:700; letter-spacing:.06em;
+  color:var(--ink); line-height:1.2;
+}
+
+.map{
+  margin-top: var(--v-4);
+  aspect-ratio: 16 / 10;
+  background:var(--placeholder);
+  overflow:hidden;
+}
+.map iframe{ width:100%; height:100%; border:0; display:block; }
+.map-link{
+  display:inline-block;
+  margin-top: var(--v-1);
+  font-size:13px;
+  text-decoration:underline; text-underline-offset:.3em;
+}
+
+.info-block{ margin-top: var(--v-3); }
+.info-block dt{
+  font-size:15px; font-weight:700; color:var(--blue); letter-spacing:.06em;
+}
+.info-block dd{
+  margin: var(--v-1) 0 var(--v-3);
+  font-size:14px;
+}
+.info-block dd:last-child{ margin-bottom:0; }
+
+/* ============================================================
+   診療案内
+   ============================================================ */
+.cards3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  column-gap: var(--h-6);
+  row-gap: var(--v-6);
+}
+.card3{ text-align:center; }
+.card3 .icon{
+  width:91px; height:91px;              /* 91 = 7 × 13 */
+  margin: 0 auto var(--v-3);
+  border-radius:50%;
+  display:grid; place-items:center;
+}
+.card3 .icon svg{ width:49px; height:49px; }   /* 49 = 7 × 7 */
+.card3 .icon--ear{    background:#E9F7F7; color:var(--accent-turquoise); }
+.card3 .icon--nose{   background:#F2F9E4; color:var(--accent-green); }
+.card3 .icon--throat{ background:#FDEEF3; color:var(--accent-pink); }
+.card3 h3{
+  margin:0 0 var(--v-2);
+  font-size:16px; font-weight:700; color:var(--blue-dark); letter-spacing:.08em;
+}
+.card3 p{ margin:0; font-size:14px; }
+
+/* ============================================================
+   当院の特徴
+   ============================================================ */
+.feature-col h3{
+  margin:0 0 var(--v-2);
+  padding-bottom: var(--v-1);
+  border-bottom:2px solid var(--blue-deep);
+  font-size:16px; font-weight:700; color:var(--blue-deep); letter-spacing:.08em;
+}
+.feature-list{ margin:0; padding:0; list-style:none; }
+.feature-list li{
+  padding-block: var(--v-2);
+  border-bottom:1px solid var(--line-soft);
+}
+.feature-list h4{
+  margin:0;
+  font-size:15px; font-weight:700; color:var(--blue); letter-spacing:.06em;
+}
+.feature-list p{ margin: var(--v-1) 0 0; font-size:14px; }
+.feature-list a{
+  display:inline-block;
+  margin-top: var(--v-1);
+  font-size:13px;
+  text-decoration:underline; text-underline-offset:.3em;
+}
+
+/* ============================================================
+   連携病院
+   ============================================================ */
+.hosp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap: var(--h-6);
+}
+.hosp-grid ul{ margin:0; padding:0; list-style:none; }
+.hosp-grid li{
+  padding-block: var(--v-2);
+  border-bottom:1px solid var(--line-soft);
+  font-size:15px;
+}
+
+/* ============================================================
+   医院紹介
+   ============================================================ */
+.cards4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  column-gap: var(--h-3);
+  row-gap: var(--v-5);
+}
+.card4 .ph{
+  aspect-ratio: 4 / 3;
+  background:var(--blue-pale);
+  overflow:hidden;
+  margin-bottom: var(--v-2);
+}
+.card4 .ph img{ width:100%; height:100%; object-fit:cover; }
+.card4 .ph--contain{ background:#fff; }
+.card4 .ph--contain img{ object-fit:contain; }
+.card4 h3{
+  margin:0 0 var(--v-1);
+  font-size:15px; font-weight:700; color:var(--blue); letter-spacing:.06em;
+}
+.card4 p{ margin:0; font-size:13px; line-height:1.8; }
+
+/* ============================================================
+   院長紹介
+   ============================================================ */
+.doctor{
+  display:grid;
+  grid-template-columns: var(--doctor-col) 1fr;
+  column-gap: var(--h-7);
+  align-items:start;
+}
+.doctor-profile{ text-align:center; }   /* 院長写真と名前は中央寄せ */
+.doctor-ph{
+  aspect-ratio: 20 / 21;
+  background:var(--blue-pale);
+  overflow:hidden;
+  margin-inline:auto;
+}
+.doctor-ph img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+.doctor-name{ margin-top: var(--v-3); }
+.doctor-name .role{ margin:0; font-size:13px; color:var(--ink-soft); }
+.doctor-name .ja{
+  margin: var(--v-1) 0 0;
+  font-size:24px; font-weight:700; letter-spacing:.18em; line-height:1.3;
+}
+.doctor-name .kana{ margin:0; font-size:12px; color:var(--ink-soft); letter-spacing:.14em; }
+
+.doctor-body h3{
+  margin:0 0 var(--v-2);
+  font-size:16px; font-weight:700; color:var(--blue-dark); letter-spacing:.08em;
+}
+.doctor-body p{ margin:0 0 var(--v-2); font-size:14px; }
+.doctor-body p:last-child{ margin-bottom:0; }
+
+.profile{
+  margin-top: var(--v-6);
+  display:grid;
+  grid-template-columns: 1.4fr 1fr;
+  column-gap: var(--h-8);
+  row-gap: var(--v-5);
+  align-items:start;
+}
+.profile h3{
+  margin:0 0 var(--v-2);
+  font-size:15px; font-weight:700; letter-spacing:.08em;
+}
+.profile dl{ margin:0; }
+.profile .row{
+  display:flex;
+  column-gap: var(--h-4);
+  padding-block: var(--v-2);
+  border-bottom:1px solid var(--line-soft);
+  font-size:13px;
+}
+.profile .row dt{ flex:0 0 84px; color:var(--ink-soft); } /* 84 = 7 × 12 */
+.profile .row dd{ margin:0; }
+.profile ul{ margin:0; padding:0; list-style:none; }
+.profile ul li{
+  padding-block: var(--v-2);
+  border-bottom:1px solid var(--line-soft);
+  font-size:13px;
+}
+
+/* ============================================================
+   フッター
+   ============================================================ */
+.footer{
+  border-top:1px solid var(--line);
+  padding-block: var(--v-5) var(--v-4);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.1fr .8fr .8fr 1.1fr;
+  column-gap: var(--h-8);
+  row-gap: var(--v-5);
+  align-items:start;
+}
+.footer-catch{
+  margin:0;
+  font-size:21px; font-weight:700; color:var(--blue-dark);
+  letter-spacing:.1em; line-height:1.7;
+}
+.sns{
+  display:flex;
+  column-gap: var(--h-2);
+  margin-top: var(--v-3);
+  padding:0; list-style:none;
+}
+.sns a{
+  display:grid; place-items:center;
+  width:36px; height:36px;
+  border-radius:50%;
+  background:#CBD2D8;
+  color:#fff;
+  transition:background .2s;
+}
+.sns a:hover{ opacity:1; }
+.sns a svg{ width:19px; height:19px; }
+.sns .is-youtube:hover{ background:#FF0033; }
+.sns .is-instagram:hover{ background:#D62976; }
+.sns .is-facebook:hover{ background:#1877F2; }
+
+.footer-nav{ margin:0; padding:0; list-style:none; }
+.footer-nav li{ margin-bottom: var(--v-1); }
+.footer-nav a{ font-size:14px; color:var(--blue-dark); }
+
+.footer-brand img{ width:280px; max-width:100%; height:auto; }   /* 280 = 7 × 40 */
+.footer-addr{ margin: var(--v-2) 0 0; font-size:13px; line-height:1.9; }
+.footer-tel{
+  margin: var(--v-2) 0 0;
+  font-family:"Quicksand",sans-serif;
+  font-size:24px; font-weight:700; letter-spacing:.06em; color:var(--blue-dark); line-height:1.2;
+}
+.footer-closed{ margin: var(--v-1) 0 0; font-size:13px; }
+.footer .btn-web{ margin-top: var(--v-2); }
+
+.copyright{
+  margin: var(--v-5) 0 0;
+  text-align:center;
+  font-family:"Quicksand",sans-serif;
+  font-size:12px; letter-spacing:.08em; color:var(--ink-soft);
+}
+
+/* ============================================================
+   スマホ固定バー
+   ============================================================ */
+.mobile-bar{ display:none; }
+
+/* ============================================================
+   レスポンシブ
+   ============================================================ */
+@media (max-width: 980px){
+  .two-col,
+  .hosp-grid,
+  .profile{ grid-template-columns:1fr; }
+  .cards4{ grid-template-columns:repeat(2,1fr); }
+  .labelled{ grid-template-columns:1fr; row-gap: var(--v-2); }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+  .header-inner{ grid-template-columns:1fr auto; }
+  .header-tel{ grid-column:2; justify-self:end; }
+  .brand{ grid-column:1; justify-self:start; }
+}
+
+@media (max-width: 760px){
+  body{ font-size:15px; }
+  .sec{ padding-block: var(--v-4); }
+  .hero{ padding-block: 0 var(--v-4); }
+
+  /* 日本語を文節の切れ目で折り返す（対応ブラウザのみ効く） */
+  p, li, dt, dd, h2, h3, h4{ word-break:auto-phrase; }
+
+  /* PC用に入れている強制改行は、スマホでは解除して幅いっぱいに流す */
+  .card3 p br,
+  .card4 p br,
+  .doctor-body p br{ display:none; }
+
+  /* 本文まわりを1段大きく */
+  .card3 p,
+  .feature-list p,
+  .doctor-body p,
+  .info-block dd{ font-size:15px; }
+
+  /* 補足テキストは14pxまで上げる */
+  .card4 p,
+  .profile .row,
+  .profile ul li,
+  .hours-legend,
+  .hours-closed,
+  .footer-addr,
+  .footer-closed,
+  .map-link,
+  .feature-list a,
+  .news-list a,
+  .doctor-name .role{ font-size:14px; }
+  .doctor-name .kana,
+  .copyright{ font-size:13px; }
+  .profile .row{ column-gap: var(--h-2); }  /* 経歴の本文に幅を回す */
+  .profile .row dt{ flex-basis:91px; }      /* 91 = 7 × 13 */
+
+  .hero-img{ aspect-ratio: 31 / 20; border-radius: var(--h-5); }
+  .hero-img img{ object-position:64% center; }
+  .cards3{ grid-template-columns:1fr; row-gap: var(--v-4); }
+  .cards4{ grid-template-columns:1fr; row-gap: var(--v-4); }
+  .card4{ text-align:center; }          /* 医院紹介は中央寄せ */
+  .doctor{ grid-template-columns:1fr; row-gap: var(--v-3); }
+  .doctor-ph{ max-width: var(--doctor-col); }
+  .footer-grid{ grid-template-columns:1fr; row-gap: var(--v-3); }
+  .news-list li{ flex-direction:column; align-items:flex-start; row-gap: var(--v-1); }
+  .hours-table{ font-size:14px; }
+  .hours-table .th-time{ width:30%; }
+  .hours-table .th-time span{ font-size:13px; }
+  .hours-table th,
+  .hours-table td{ padding-block: var(--v-2); }
+  .mk{ font-size:17px; }
+
+  /* ---- ハンバーガーメニュー ---- */
+  .header-inner{
+    grid-template-columns:1fr auto;
+    row-gap: var(--v-1);
+    align-items:center;
+  }
+  .brand{ grid-column:1; grid-row:1; justify-self:start; }
+  .brand img{ width:182px; }                 /* 182 = 7 × 26 */
+  .header-tel{ display:none; }               /* スマホは電話番号を出さない */
+  .nav-toggle{ display:block; grid-column:2; grid-row:1; justify-self:end; }
+
+  .nav{
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    row-gap:0;
+    margin-top: var(--v-2);
+    border-top:1px solid var(--line);
+  }
+  .nav.is-open{ display:flex; }
+  .nav a{
+    font-size:15px;
+    padding-block: var(--v-1);
+    border-bottom:1px solid var(--line);
+  }
+
+  body{ padding-bottom: var(--v-7); }
+  .float-cta{ display:none; }          /* スマホは下の固定バーに任せる */
+  .mobile-bar{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:1px;
+    position:fixed; inset:auto 0 0 0; z-index:60;
+    background:var(--line);
+  }
+  .mobile-bar a{
+    display:grid; place-items:center;
+    padding-block: var(--v-1);
+    font-size:14px; font-weight:700; letter-spacing:.06em;
+    color:#fff;
+  }
+  .mobile-bar a.is-monshin{ background:var(--blue); }
+  .mobile-bar a.is-web{ background:var(--orange); }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== ヘッダー ===================== -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <img src="https://ikejibi.jp/images/logo.gif" alt="池田耳鼻咽喉科" width="384" height="55">
+      </a>
+      <p class="header-tel">
+        <span class="ruby">みみ・ふくみみ</span>
+        <a class="num" href="tel:0562332933">0562-33-2933</a>
+      </p>
+      <button class="nav-toggle" type="button"
+              aria-label="メニューを開く" aria-expanded="false" aria-controls="globalnav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav" id="globalnav">
+      <a href="#top">トップ</a>
+      <a href="#hours">診療時間・アクセス</a>
+      <a href="#guide">診療案内</a>
+      <a href="#features">当院の特徴</a>
+      <a href="#clinic">医院紹介</a>
+      <a href="#doctor">院長紹介</a>
+      <a href="#recruit">スタッフ募集</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== ヒーロー ===================== -->
+<div class="hero" id="top">
+  <div class="hero-img">
+    <img src="https://ikejibi.jp/images/slide02.jpg" alt="診察室で子どもとハイタッチをする院長">
+  </div>
+</div>
+
+<!-- ===================== お知らせ ===================== -->
+<section class="sec" id="news">
+  <div class="container">
+    <div class="labelled">
+      <h2 class="sec-head sec-head--inline">お知らせ</h2>
+      <ul class="news-list">
+        <li>
+          <p>インフルエンザ予防接種を実施しています。</p>
+          <a href="https://ikejibi.jp/images/influ_yoyaku.pdf" target="_blank" rel="noopener">詳細（PDF）</a>
+        </li>
+        <li>
+          <p>時間を指定してのご予約もできます。</p>
+          <a href="https://ikejibi.jp/images/uketuke2026.pdf" target="_blank" rel="noopener">詳細（PDF）</a>
+        </li>
+        <li>
+          <p>小中高生を対象に「注射をしないアレルギー検査」を行っています。</p>
+          <a href="https://youtu.be/A8X6yrm3aNo" target="_blank" rel="noopener">動画で見る</a>
+        </li>
+        <li>
+          <p>ご自宅で気軽にできる「いびきの検査」を行っています。</p>
+          <a href="https://youtu.be/Rza08gh8SdI" target="_blank" rel="noopener">動画で見る</a>
+        </li>
+        <li>
+          <p>来院せずにお薬がご自宅に届く「オンライン診療」に対応しています。</p>
+          <a href="https://ikejibi.jp/images/online.pdf" target="_blank" rel="noopener">詳細（PDF）</a>
+        </li>
+        <li>
+          <p>キャッシュレス決済をご利用いただけます。</p>
+          <a href="https://ikejibi.jp/images/shiharai-2025.pdf" target="_blank" rel="noopener">詳細（PDF）</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 診療時間 ／ アクセス ===================== -->
+<section class="sec" id="hours">
+  <div class="container">
+    <div class="two-col">
+
+      <div>
+        <h2 class="sec-head sec-head--inline">診療時間</h2>
+        <table class="hours-table">
+          <thead>
+            <tr>
+              <th class="th-time"></th>
+              <th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="th-time" scope="row">午前<span>9:30 〜 12:30</span></th>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-tri">▲</span></td>
+              <td><span class="mk mk-none">−</span></td>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-tri">▲</span></td>
+              <td><span class="mk mk-none">−</span></td>
+            </tr>
+            <tr>
+              <th class="th-time" scope="row">午後<span>15:30 〜 18:30</span></th>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-none">−</span></td>
+              <td><span class="mk mk-circle">●</span></td>
+              <td><span class="mk mk-star">★</span></td>
+              <td><span class="mk mk-none">−</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hours-legend">
+          <span><span class="mk mk-tri">▲</span>午前 9:30〜12:00</span>
+          <span><span class="mk mk-star">★</span>午後 14:00〜15:00</span>
+        </div>
+        <p class="hours-closed">休診日：木曜・日曜・祝日</p>
+
+        <div class="hours-contact">
+          <p class="lbl">お問い合わせ</p>
+          <p class="num"><a href="tel:0562332933" style="color:inherit;">0562-33-2933</a></p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="sec-head sec-head--inline">アクセス</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=%E6%B1%A0%E7%94%B0%E8%80%B3%E9%BC%BB%E5%92%BD%E5%96%89%E7%A7%91%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%9D%B1%E6%B5%B7%E5%B8%82%E5%A4%A7%E7%94%B0%E7%94%BA%E5%BE%8C%E7%94%B01037&amp;hl=ja&amp;z=17&amp;output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="池田耳鼻咽喉科の地図"></iframe>
+        </div>
+        <a class="map-link"
+           href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%A0%E7%94%B0%E8%80%B3%E9%BC%BB%E5%92%BD%E5%96%89%E7%A7%91%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%9D%B1%E6%B5%B7%E5%B8%82%E5%A4%A7%E7%94%B0%E7%94%BA%E5%BE%8C%E7%94%B01037"
+           target="_blank" rel="noopener">大きな地図で見る</a>
+
+        <dl class="info-block">
+          <dt>住所</dt>
+          <dd>愛知県東海市大田町後田1037　駐車場35台有</dd>
+          <dt>アクセス</dt>
+          <dd>名鉄常滑線 太田川駅北口より 徒歩2分</dd>
+        </dl>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 診療案内 ===================== -->
+<section class="sec" id="guide">
+  <div class="container">
+    <h2 class="sec-head">診療案内</h2>
+    <div class="cards3">
+      <div class="card3">
+        <div class="icon icon--ear">
+          <!-- みみ -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7.7 9.6a4.3 4.3 0 0 1 8.6 0c0 1.9-1.1 2.9-2 3.8-.8.8-1.3 1.4-1.3 2.4a1.9 1.9 0 0 1-3.8 0"/>
+            <path d="M10.8 9.7a1.3 1.3 0 0 1 2.6 0c0 .9-.7 1.4-1.2 1.9"/>
+            <path d="M8.6 18.2c.4 1.2 1.5 2 2.8 2"/>
+          </svg>
+        </div>
+        <h3>みみの病気</h3>
+        <p>耳の痛み、聞こえにくさ、めまいなど、<br>耳の気になる症状を診療します。</p>
+      </div>
+      <div class="card3">
+        <div class="icon icon--nose">
+          <!-- はな -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.3 4.2c.2 3-.4 4.9-1.5 6.9l-1.3 2.3c-.4.8.1 1.7 1 1.7h.9"/>
+            <path d="M16.3 13c1 .8 1.6 1.9 1.6 3.1 0 2-1.9 3.6-4.2 3.6-2.1 0-3.8-1.3-4.1-3"/>
+            <circle cx="13.7" cy="16.4" r="1.1"/>
+          </svg>
+        </div>
+        <h3>はなの病気</h3>
+        <p>鼻づまり、鼻水、花粉症、蓄膿症など、<br>鼻の気になる症状を診療します。</p>
+      </div>
+      <div class="card3">
+        <div class="icon icon--throat">
+          <!-- のど -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8.4 4.4c0 2.3-.5 3.3-1.1 4.3-.5.9-.8 1.8-.5 2.7.4 1.3 1.4 2.1 1.4 3.4v5.3"/>
+            <path d="M15.6 4.4c0 2.3.5 3.3 1.1 4.3.5.9.8 1.8.5 2.7-.4 1.3-1.4 2.1-1.4 3.4v5.3"/>
+            <path d="M8.3 16.1c1.1.5 2.4.8 3.7.8s2.6-.3 3.7-.8"/>
+            <path d="M8.3 19c1.1.5 2.4.8 3.7.8s2.6-.3 3.7-.8"/>
+          </svg>
+        </div>
+        <h3>のどの病気</h3>
+        <p>のどの痛み、せき、声がれなど、<br>のどの気になる症状を診療します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 当院の特徴 ===================== -->
+<section class="sec" id="features">
+  <div class="container">
+    <h2 class="sec-head">当院の特徴</h2>
+    <div class="two-col">
+
+      <div class="feature-col">
+        <h3>アレルギーの治療</h3>
+        <ul class="feature-list">
+          <li>
+            <h4>舌下免疫療法</h4>
+            <p>スギ・ダニのアレルギーに対して行っています。</p>
+          </li>
+          <li>
+            <h4>レーザー治療</h4>
+            <p>花粉症などのアレルギー症状に。</p>
+          </li>
+          <li>
+            <h4>注射をしないアレルギー検査</h4>
+            <p>小中高生が対象です。</p>
+            <a href="https://youtu.be/A8X6yrm3aNo" target="_blank" rel="noopener">検査の様子を動画で見る</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="feature-col">
+        <h3>いびき・聞こえの相談</h3>
+        <ul class="feature-list">
+          <li>
+            <h4>自宅でできるいびきの検査</h4>
+            <p>ご自宅で気軽に検査できます。</p>
+            <a href="https://youtu.be/Rza08gh8SdI" target="_blank" rel="noopener">検査の様子を動画で見る</a>
+          </li>
+          <li>
+            <h4>睡眠時無呼吸症候群のCPAP療法</h4>
+            <p>検査から治療まで当院で行います。</p>
+          </li>
+          <li>
+            <h4>補聴器の相談・メンテナンス</h4>
+            <p>週2回、相談の日を設けてサポートしています。</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 連携病院 ===================== -->
+<section class="sec" id="partners">
+  <div class="container">
+    <div class="labelled">
+      <h2 class="sec-head sec-head--inline">連携病院</h2>
+      <div class="hosp-grid">
+        <ul>
+          <li>名古屋大学医学部附属病院</li>
+          <li>名古屋市立大学病院</li>
+          <li>あいち小児保健医療総合センター</li>
+          <li>国立長寿医療研究センター</li>
+        </ul>
+        <ul>
+          <li>大同病院・だいどうクリニック</li>
+          <li>公立西知多総合病院</li>
+          <li>中部労災病院</li>
+          <li>知多半島総合医療センター</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 医院紹介 ===================== -->
+<section class="sec" id="clinic">
+  <div class="container">
+    <h2 class="sec-head">医院紹介</h2>
+    <div class="cards4">
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_1.jpg" alt="当院外観"></div>
+        <h3>当院外観</h3>
+        <p>オレンジ色のレンガの建物。<br>駐車場も３５台分あります。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_2.jpg" alt="院内の水槽"></div>
+        <h3>熱帯魚</h3>
+        <p>院内には大きな水槽が２つ。<br>処置を受けつつお魚さんたちを<br>見てリラックス〜。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_3.jpg" alt="キッズルーム"></div>
+        <h3>キッズルーム</h3>
+        <p>広いキッズルームはゲーム機や<br>絵本も充実。壁にお絵かきも<br>できちゃいます。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_4.jpg" alt="おむつ交換台"></div>
+        <h3>おむつ交換台</h3>
+        <p>トイレにはおむつ交換台と<br>ベビーチェアを完備。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_5.jpg" alt="鼻洗浄機"></div>
+        <h3>鼻洗浄</h3>
+        <p>鼻の内部を洗浄する鼻洗浄機。<br>これをするために遠方から<br>来られる方も。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_6.jpg" alt="医療用ヘルストロン"></div>
+        <h3>ヘルストロン</h3>
+        <p>医療用ヘルストロン（３万ボルト）を<br>設置。耳鳴り・不眠症・肩こりなどに<br>効果があると<br>いわれています（保険適用）</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph"><img src="https://ikejibi.jp/images/ph_hi_7.jpg" alt="レーザー治療器"></div>
+        <h3>レーザー・舌下免疫療法</h3>
+        <p>花粉症などのアレルギー症状に対する<br>レーザー治療や舌下免疫療法（スギ・<br>ダニ）も行っています。</p>
+      </div>
+
+      <div class="card4">
+        <div class="ph ph--contain"><img src="https://ikejibi.jp/images/ph_hi_8.jpg" alt="当院のロゴマーク いけぞう"></div>
+        <h3>いけぞう</h3>
+        <p>当院のロゴマーク。インスタや<br>フェイスブックでコメント中！<br>＜ @ikejibi ＞</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 院長紹介 ===================== -->
+<section class="sec" id="doctor">
+  <div class="container">
+    <h2 class="sec-head">院長紹介</h2>
+
+    <div class="doctor">
+      <div class="doctor-profile">
+        <div class="doctor-ph">
+          <img src="https://ikejibi.jp/images/doctor_img.jpg" alt="院長 池田篤彦">
+        </div>
+        <div class="doctor-name">
+          <p class="role">院長</p>
+          <p class="ja">池田 篤彦</p>
+          <p class="kana">いけだ あつひこ</p>
+        </div>
+      </div>
+
+      <div class="doctor-body">
+        <h3>キャッチコピー</h3>
+        <p>ホームページをご覧いただきありがとうございます。<br>
+           2013年9月に院長を継承させていただきました池田篤彦（いけだあつひこ）です。</p>
+        <p>前院長である池田貞秀（いけだ さだひで）は40年以上、この地域で<br>
+           『みなさんのことを家族と思って接する』を医院の信念として貢献してきました。<br>
+           私もその信念を引き継ぎ一生懸命精進していきたいと思っています。</p>
+        <p>私は一般耳鼻科の他に、がんなどの腫瘍にも力を入れておりますので、<br>
+           わからないことがあればどんな些細な事でもご相談ください。<br>
+           幼少の頃から地元であるこの地域で、みなさんに信頼され安心安全な医療を<br>
+           提供できるよう努力してまいりますので何卒よろしくお願いいたします。</p>
+      </div>
+    </div>
+
+    <div class="profile">
+      <div>
+        <h3>経歴</h3>
+        <dl>
+          <div class="row"><dt>1993年3月</dt><dd>東海高校 卒業（明佳幼稚園・加木屋小学校・東海中学校を経て）</dd></div>
+          <div class="row"><dt>2000年3月</dt><dd>川崎医科大学医学部 卒業</dd></div>
+          <div class="row"><dt>2000年5月</dt><dd>中部労災病院 臨床研修医</dd></div>
+          <div class="row"><dt>2002年4月</dt><dd>中部労災病院 耳鼻咽喉科 医師</dd></div>
+          <div class="row"><dt>2006年4月</dt><dd>愛知県がんセンター中央病院 頭頸部外科 レジデント</dd></div>
+          <div class="row"><dt>2008年4月</dt><dd>中部労災病院 耳鼻咽喉科 医師</dd></div>
+          <div class="row"><dt>2009年4月</dt><dd>愛知医科大学 耳鼻咽喉科 助教</dd></div>
+          <div class="row"><dt>2013年9月</dt><dd>池田耳鼻咽喉科 院長（愛知医科大学 耳鼻咽喉科 非常勤医）</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <h3>所属学会</h3>
+        <ul>
+          <li>日本耳鼻咽喉科学会</li>
+          <li>耳鼻咽喉科臨床学会</li>
+          <li>日本鼻科学会</li>
+          <li>日本アレルギー学会</li>
+          <li>日本頭頸部癌学会</li>
+          <li>日本抗加齢医学会（アンチエイジング学会）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== フッター ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <p class="footer-catch">みなさんのことを<br>家族と思って接する</p>
+        <ul class="sns">
+          <li>
+            <a class="is-youtube" href="https://www.youtube.com/@ikejibi" target="_blank" rel="noopener" aria-label="YouTube（いけぞうチャンネル）">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="is-instagram" href="https://www.instagram.com/ikejibi/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm8.5-11.3a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="is-facebook" href="https://www.facebook.com/ikejibi/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="#top">トップ</a></li>
+        <li><a href="#hours">診療時間・アクセス</a></li>
+        <li><a href="#guide">診療案内</a></li>
+      </ul>
+
+      <ul class="footer-nav">
+        <li><a href="#features">当院の特徴</a></li>
+        <li><a href="#clinic">医院紹介</a></li>
+        <li><a href="#doctor">院長紹介</a></li>
+        <li><a href="#recruit">スタッフ募集</a></li>
+      </ul>
+
+      <div>
+        <div class="footer-brand">
+          <img src="https://ikejibi.jp/images/logo.gif" alt="池田耳鼻咽喉科" width="384" height="55">
+        </div>
+        <p class="footer-addr">
+          愛知県東海市大田町後田1037<br>
+          名鉄太田川駅北口より 徒歩2分
+        </p>
+        <p class="footer-tel"><a href="tel:0562332933" style="color:inherit;">0562-33-2933</a></p>
+        <p class="footer-closed">休診日：木曜・日曜・祝日</p>
+        <a class="btn-web" href="https://ikejibi.mdja.jp/" target="_blank" rel="noopener">Web受付</a>
+      </div>
+
+    </div>
+
+    <p class="copyright">© 2026 IKEDA E.N.T CLINIC.</p>
+  </div>
+</footer>
+
+<!-- ===================== スマホ固定バー ===================== -->
+<nav class="mobile-bar">
+  <a class="is-monshin" href="https://symview.me/medical_interview_flows/ikejibi/public/?url_kind=1&amp;interview_datetime=today" target="_blank" rel="noopener">Web問診</a>
+  <a class="is-web" href="https://ikejibi.mdja.jp/" target="_blank" rel="noopener">Web受付</a>
+</nav>
+
+<!-- ===================== 右下の追従ボタン ===================== -->
+<div class="float-cta">
+  <a class="is-monshin" href="https://symview.me/medical_interview_flows/ikejibi/public/?url_kind=1&amp;interview_datetime=today" target="_blank" rel="noopener">Web問診</a>
+  <a class="is-web" href="https://ikejibi.mdja.jp/" target="_blank" rel="noopener">Web受付</a>
+</div>
+
+<script>
+/* スマホのハンバーガーメニュー */
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.nav');
+  if (!toggle || !nav) return;
+
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('is-open'));
+  });
+
+  /* リンクを押したら閉じる */
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  /* 画面を広げたら開いた状態を解除する */
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 760) setOpen(false);
+  });
+})();
+</script>
+
+</body>
+</html>
